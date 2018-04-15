@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Style in JS</title>
+	<link rel="stylesheet" href="">
+	<style>
+	.mouse{
+		background-color: red;
+		color: white;
+		}
+	</style>
+	<script>
+		function mouseover() {
+			var mouse1=document.querySelector('#block');
+			mouse1.classList.add('mouse');
+		}
+		function mouseout() {
+			var mouse2= document.querySelector('#block');
+			mouse2.classList.remove('mouse');
+		}
+	</script>
+</head>
+<body>
+	<input type="button" value="Login" id="block">
+	<input type="button" onmouseover="mouseover()" onmouseout="mouseout()" value="Hover over me">
+</body>
+</html>

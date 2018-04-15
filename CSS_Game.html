@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>CSS Game</title>
+	<style>
+		.bar1{
+			background-color: blue;
+			height: 100px;
+			width: 80px;
+			animation: bar1 2s linear 1s infinite alternate;
+			position: relative;
+		}
+		@keyframes bar1{
+			from{top: 0px; left: 400px; background-color: yellow;}
+			to{top: 400px; left: 400px; background-color: green;}
+		}
+		.circle{
+			background-color: blue;
+			height: 400px;
+			width: 600px;
+			border-radius: 100px;
+			animation: circle 2s linear infinite alternate;
+			position: relative;
+		}
+		@keyframes circle{
+			0%{top: 0; left: 800px;}
+			20%{top:200px; left: 600px; right: 200px;}
+			40%{top: 50px; left: 200px; right: 600px;}
+			60%{}
+		}
+		.bar2{
+			background-color: blue;
+			height: 100px;
+			width: 80px;
+			animation: bar2 2s linear 1s infinite alternate;
+			position: relative;
+		}
+		@keyframes bar2{
+			from{top: 200px; left: 800px; right: 0;}
+			to{top: 400px; left: 800px; right: 0}
+		}
+		.rectangle{
+			background-color: blue;
+			height: 400px;
+			width: 600px;
+			animation: rectangle 2s linear 1s infinite alternate;
+			position: relative;
+		}
+		.ball{
+			background-color: blue;
+			border-radius: 100px;
+			animation: ball 2s linear 1s infinite alternate-reverse;
+			position: relative;
+		}
+	</style>
+</head>
+<body>
+	<div class="bar1"></div>
+	<div class="circle"></div>
+	<div class="bar2"></div>
+	<div class="rectangle"></div>
+	<div class="ball"></div>
+</body>
+</html>

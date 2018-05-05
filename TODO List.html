@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TODO List</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+
+<body>
+    <div>
+        <div class="container">
+            <h1>TODO List</h1>
+            <hr>
+            <input type="text" id="inputText">
+            <button class="btn btn-default" type="button" onclick="todoList()">Button</button>
+            <!-- <div></div> -->
+        </div>
+    </div>
+    <script>
+        function todoList(){
+            var text=document.getElementById('inputText').value;
+            var p=document.createElement('p');
+            console.log(p);
+            p.setAttribute('class','newTextItem');
+            p.appendChild(document.createTextNode(text));
+            console.log(p);
+            document.querySelector('.container').appendChild(p);
+        }
+    </script>
+</body>
+
+</html>

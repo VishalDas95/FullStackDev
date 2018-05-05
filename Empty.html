@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Empty HTML</title>
+    <script src="jquery-3.3.1.min.js"></script>
+</head>
+<body>
+    <script>
+        $(document).ready(function () {
+                $.ajax({
+                    url: "https://newsapi.org/v2/top-headlines?sources=medical-news-today&apiKey=6f3d797091fb4beca58c9eae457a3301",
+                    type: 'GET',
+                    dataType: 'JSON', //JSON: Javascript Object Notation. "Key:value" pair
+                    success: function (res) {
+                        var articles = res.articles;
+                        // console.log(articles[0].author); //To fetch only a single value from the array returned from the API End point
+                        for (var i = 0; i < 10; i++) {
+                            var article = articles[i];
+                            var author=article.author;
+                            var desc=article.description;
+                            var title=article.title;
+                            var urlToMain=article.url;
+                            var src=article.urlToImage;
+                            // console.log(author);
+                            // console.log(desc);
+                            // console.log(title);
+                            // console.log(urlToMain);
+                            // console.log(src);
+                            // console.log('----------------');
+
+                            //Appending them into the body
+
+                            var h1=document.createElement('h1');
+                            h1.appendChild(document.createTextNode(title));
+                            var p=document.createElement('p');
+                            p.appendChild(document.createTextNode(desc));
+                            var span_author=document.createElement('span');
+                            span_author.appendChild(document.createTextNode(author));
+                            var span_date=document.createElement('span');
+                            span_date.appendChild(document.createTextNode(desc));
+                            var img=document.createElement('img');
+                            img.setAttribute('src',src);
+                            var container=document.createElement('div');
+                            container.appendChild(h1);
+                            container.appendChild(img);
+                            container.appendChild(p);
+                            container.appendChild(span_author);
+                            container.appendChild(span_date);
+                            var body=document.body;
+                            body.appendChild(container);
+                            // body.appendChild('<br>');
+                            // body.appendChild('<hr>');
+                            // body.appendChild('<br>');
+
+                        }
+                    },
+                    error: function (err) {
+                        console.log(err);
+                    }
+                })
+            });
+    </script>
+</body>
+</html>
